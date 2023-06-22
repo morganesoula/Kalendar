@@ -53,7 +53,7 @@ internal fun onDayClicked(
 
             selectedRange.value?.let { rangeDates ->
                 val selectedEvents = events
-                    .filter { it.date in (rangeDates.start..rangeDates.end) }
+                    .filter { it.startDate in (rangeDates.start..rangeDates.end) }
                     .toList()
 
                 onRangeSelected(rangeDates, selectedEvents)

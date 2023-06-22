@@ -101,7 +101,7 @@ fun KalendarDay(
         )
         Row {
             kalendarEvents.events
-                .filter { it.date == date }
+                .filter { it.startDate == date || it.endDate == date }
                 .take(3)
                 .fastForEachIndexed { index, _ ->
                     Row {
