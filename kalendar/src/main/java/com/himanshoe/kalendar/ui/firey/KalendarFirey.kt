@@ -91,10 +91,9 @@ internal fun KalendarFirey(
     val displayedYear = remember { mutableStateOf(today.year) }
     val currentMonth = displayedMonth.value
     val currentYear = displayedYear.value
-    val currentMonthIndex = currentMonth.value.minus(1)
 
     val defaultHeaderColor = KalendarTextKonfig.default(
-        color = kalendarColors.color[currentMonthIndex].headerTextColor,
+        color = kalendarColors.color[0].headerTextColor,
     )
     val newHeaderTextKonfig = kalendarHeaderTextKonfig ?: defaultHeaderColor
 
@@ -106,7 +105,7 @@ internal fun KalendarFirey(
     Column(
         modifier = modifier
             .background(
-                color = kalendarColors.color[currentMonthIndex].backgroundColor
+                color = kalendarColors.color[0].backgroundColor
             )
             .wrapContentHeight()
             .fillMaxWidth()
@@ -156,7 +155,7 @@ internal fun KalendarFirey(
                             KalendarDay(
                                 date = day,
                                 selectedDate = selectedDate.value,
-                                kalendarColors = kalendarColors.color[currentMonthIndex],
+                                kalendarColors = kalendarColors.color[0],
                                 kalendarEvents = events,
                                 kalendarDayKonfig = kalendarDayKonfig,
                                 selectedRange = selectedRange.value,
