@@ -14,10 +14,8 @@
 
 package com.himanshoe.kalendar.ui.component.header
 
-import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.ContentTransform
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.animation.SizeTransform
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
@@ -84,7 +82,7 @@ fun KalendarHeader(
     ) {
         val titleText = remember(month, year) { getTitleText(month, year) }
 
-        AnimatedContent(
+        /* AnimatedContent(
             targetState = titleText,
             transitionSpec = {
                 addAnimation(isNext = isNext).using(
@@ -92,18 +90,21 @@ fun KalendarHeader(
                 )
             }
         ) { targetText ->
-            Text(
-                modifier = Modifier
-                    .wrapContentHeight()
-                    .wrapContentWidth()
-                    .align(Alignment.CenterVertically),
-                color = kalendarTextKonfig.kalendarTextColor,
-                fontSize = kalendarTextKonfig.kalendarTextSize,
-                text = targetText,
-                fontWeight = FontWeight.SemiBold,
-                textAlign = TextAlign.Start
-            )
-        }
+
+        } */
+
+        Text(
+            modifier = Modifier
+                .wrapContentHeight()
+                .wrapContentWidth()
+                .align(Alignment.CenterVertically),
+            color = kalendarTextKonfig.kalendarTextColor,
+            fontSize = kalendarTextKonfig.kalendarTextSize,
+            text = titleText,
+            fontWeight = FontWeight.SemiBold,
+            textAlign = TextAlign.Start
+        )
+
         if (arrowShown) {
             Row(
                 modifier = Modifier
